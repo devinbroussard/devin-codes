@@ -18,6 +18,10 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style scoped>
+.h-100vh {
+  height: 100vh;
+}
+
 .w-100 {
   width: 100%;
 }

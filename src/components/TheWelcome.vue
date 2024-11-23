@@ -7,7 +7,7 @@
 <style>
 @media (min-width: 1024px) {
   .welcome {
-    min-height: 100vh;
+    height: 50vh;
     display: flex;
     align-items: center;
   }
