@@ -27,17 +27,17 @@ const saveThemPreference = () => {
   localStorage.setItem('theme', isDarkTheme.value ? 'dark' : 'light')
 }
 
-// onMounted(() => {
-//   const savedTheme = localStorage.getItem('theme')
+onMounted(() => {
+  const savedTheme = localStorage.getItem('theme')
 
-//   if (savedTheme) {
-//     isDarkTheme.value = savedTheme === 'dark'
-//   } else {
-//     isDarkTheme.value = getSystemPreference()
-//   }
+  if (savedTheme) {
+    isDarkTheme.value = savedTheme === 'dark'
+  } else {
+    isDarkTheme.value = getSystemPreference()
+  }
 
-//   updateThemeClass()
-// })
+  updateThemeClass()
+})
 </script>
 
 <template>
