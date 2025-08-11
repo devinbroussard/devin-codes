@@ -1,9 +1,7 @@
 @import './base.css';
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  font-weight: normal;
+  width: 100%;
   height: 100vh;
 }
 
@@ -20,9 +18,8 @@ body {
 a,
 .green {
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  color: var(--color-heading);
   transition: 0.4s;
-  padding: 3px;
 }
 
 @media (hover: hover) {

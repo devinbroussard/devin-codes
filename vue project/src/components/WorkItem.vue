@@ -19,6 +19,11 @@ const props = defineProps({
     required: false,
     default: false,
   },
+  isFullSizeIcon: {
+    type: Boolean,
+    required: false,
+    default: false,
+  },
 })
 
 let imgSrc = ref()
@@ -32,7 +37,12 @@ import(props.imgPath).then((img) => {
   <div class="work-item">
     <div class="test">
       <div class="work-icon-border">
-        <img v-if="imgSrc" class="work-icon" :src="imgSrc" />
+        <img
+          v-if="imgSrc"
+          class="work-icon"
+          :src="imgSrc"
+          :class="{ 'full-size-icon': isFullSizeIcon }"
+        />
       </div>
       <div :class="{ wall: !isLastItem }"></div>
     </div>
@@ -46,10 +56,20 @@ import(props.imgPath).then((img) => {
 </template>
 
 <style scoped>
+h2 {
+  font-size: 20px;
+}
+
+.full-size-icon {
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 100%;
+}
+
 .work-icon-border {
   height: 54px;
   width: 54px;
-  border: 2px var(--vt-c-indigo) solid;
+  border: 2px var(--color-text) solid;
   border-radius: 100%;
   display: flex;
   align-items: center;
@@ -63,7 +83,7 @@ import(props.imgPath).then((img) => {
 
 .wall {
   margin-left: 27px;
-  border-left: 2px var(--vt-c-indigo) solid;
+  border-left: 2px var(--color-text) solid;
   height: calc(100% - 54px);
 }
 
